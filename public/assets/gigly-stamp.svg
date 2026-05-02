@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" fill="none">
+  <g transform="rotate(-4 120 50)">
+    <rect x="6" y="8" width="228" height="84" rx="2" stroke="#9C3F2E" stroke-width="3" fill="none"></rect>
+    <rect x="14" y="16" width="212" height="68" rx="1" stroke="#9C3F2E" stroke-width="1.5" fill="none"></rect>
+    <text x="120" y="52" text-anchor="middle" font-family="DM Serif Display, Georgia, serif" font-style="italic" font-size="36" fill="#9C3F2E">gigly</text>
+    <text x="120" y="76" text-anchor="middle" font-family="Special Elite, Courier New, monospace" font-size="11" letter-spacing="3" fill="#9C3F2E">· LIVE MUSIC LOGGED ·</text>
+  </g>
+  <g opacity="0.18" transform="rotate(-4 120 50)">
+    <rect x="20" y="20" width="6" height="2" fill="#9C3F2E"></rect>
+    <rect x="200" y="80" width="8" height="2" fill="#9C3F2E"></rect>
+    <rect x="60" y="84" width="4" height="2" fill="#9C3F2E"></rect>
+  </g>
+</svg>

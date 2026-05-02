@@ -1,0 +1,217 @@
+/* ============================================================
+   GIGLY DESIGN SYSTEM — colors & type
+   Faded polaroid · warm cream paper · sun-bleached, nostalgic
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Special+Elite&family=Caveat:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ---------- THEME-IMMUTABLE LITERALS ---------------------- */
+  /* Always-cream / always-ink. Used for text-on-accent buttons that must
+     stay readable regardless of the active background theme. */
+  --cream:           #F4ECD8;
+  --ink-fixed:       #2B2018;
+
+  /* ---------- COLOR · paper & ink ---------------------------- */
+  --paper:           #F4ECD8;
+  --paper-warm:      #EFE3C8;
+  --paper-edge:      #E6D6B3;
+  --paper-deep:      #3A2E22;
+  --ink:             #2B2018;
+  --ink-soft:        #6B5A47;
+  --ink-faded:       #9A876E;
+
+  /* ---------- COLOR · accents (faded poster palette) -------- */
+  --terracotta:      #C8553D;
+  --terracotta-deep: #9C3F2E;
+  --mustard:         #D4A24C;
+  --mustard-deep:    #B07F2E;
+  --rust:            #8B3A1F;
+  --olive:           #6F7A3D;
+  --indigo:          #364C6E;
+  --plum:            #5C3A4E;
+
+  /* ---------- COLOR · functional ---------------------------- */
+  --success:         #6F7A3D;
+  --warning:         #D4A24C;
+  --danger:          #9C3F2E;
+  --info:            #364C6E;
+
+  /* ---------- COLOR · semantic foreground ------------------- */
+  --fg1:             var(--ink);
+  --fg2:             var(--paper-deep);
+  --fg3:             var(--ink-soft);
+  --fg4:             var(--ink-faded);
+  --fg-on-dark:      var(--paper);
+  --fg-link:         var(--terracotta);
+  --fg-link-hover:   var(--terracotta-deep);
+
+  /* ---------- COLOR · semantic background ------------------- */
+  --bg1:             var(--paper);
+  --bg2:             var(--paper-warm);
+  --bg3:             #E9DCC0;
+  --bg-stamp:        var(--rust);
+  --bg-dark:         var(--ink);
+  --bg-tape:         #E8D77A;
+  --bg-tape-pink:    #E8B8B0;
+
+  /* ---------- COLOR · borders ------------------------------- */
+  --border-soft:     rgba(58, 46, 34, 0.12);
+  --border:          rgba(58, 46, 34, 0.22);
+  --border-strong:   rgba(58, 46, 34, 0.45);
+  --border-ink:      var(--ink);
+
+  /* ---------- TYPE · families ------------------------------- */
+  --font-display:    'DM Serif Display', 'Playfair Display', Georgia, serif;
+  --font-serif:      'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+  --font-mono:       'Special Elite', 'Courier New', ui-monospace, monospace;
+  --font-hand:       'Caveat', 'Bradley Hand', cursive;
+
+  /* ---------- TYPE · scale (mobile-first) ------------------- */
+  --fs-display:      44px;
+  --fs-h1:           32px;
+  --fs-h2:           24px;
+  --fs-h3:           20px;
+  --fs-body:         16px;
+  --fs-small:        14px;
+  --fs-caption:      12px;
+  --fs-mono:         13px;
+  --fs-hand:         22px;
+
+  --lh-tight:        1.05;
+  --lh-snug:         1.2;
+  --lh-normal:       1.45;
+  --lh-loose:        1.6;
+
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-stamp:  0.18em;
+
+  /* ---------- SPACING --------------------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  /* ---------- RADII ----------------------------------------- */
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 8px;
+  --r-xl: 14px;
+  --r-pill: 999px;
+
+  /* ---------- SHADOWS --------------------------------------- */
+  --shadow-photo:    0 1px 2px rgba(58,46,34,0.10),
+                     0 6px 14px rgba(58,46,34,0.18);
+  --shadow-card:     0 1px 1px rgba(58,46,34,0.08),
+                     0 2px 6px rgba(58,46,34,0.10);
+  --shadow-lift:     0 2px 4px rgba(58,46,34,0.10),
+                     0 12px 28px rgba(58,46,34,0.20);
+  --shadow-pressed:  inset 0 1px 2px rgba(58,46,34,0.20);
+  --shadow-tape:     0 1px 2px rgba(58,46,34,0.18);
+
+  /* ---------- TIMING ---------------------------------------- */
+  --ease:            cubic-bezier(.2, .7, .2, 1);
+  --ease-out-back:   cubic-bezier(.34, 1.5, .64, 1);
+  --t-fast:          120ms;
+  --t-base:          200ms;
+  --t-slow:          360ms;
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES
+   ============================================================ */
+
+html, body {
+  background: var(--bg1);
+  color: var(--fg2);
+  font-family: var(--font-serif);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg1);
+  margin: 0;
+}
+.display {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg1);
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  color: var(--fg1);
+  margin: 0;
+}
+h3, .h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  color: var(--fg1);
+  margin: 0;
+}
+
+p, .body {
+  font-family: var(--font-serif);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--fg2);
+  margin: 0;
+}
+
+.small  { font-size: var(--fs-small); color: var(--fg3); }
+.caption{ font-size: var(--fs-caption); color: var(--fg4); }
+
+.mono, code, kbd, .ticket-text {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg2);
+}
+
+.hand {
+  font-family: var(--font-hand);
+  font-weight: 500;
+  font-size: var(--fs-hand);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.stamp {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--tracking-stamp);
+  text-transform: uppercase;
+  color: var(--bg-stamp);
+}
+
+a {
+  color: var(--fg-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(200, 85, 61, 0.45);
+  transition: color var(--t-fast) var(--ease);
+}
+a:hover { color: var(--fg-link-hover); text-decoration-color: currentColor; }
+
+::selection { background: var(--mustard); color: var(--ink-fixed); }
