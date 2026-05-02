@@ -5,7 +5,7 @@ type Props = {
   rotate?: number;
 };
 
-export function Wordmark({ size = 64, rotate = -3 }: Props) {
+export function Wordmark({ size = 76, rotate = -3 }: Props) {
   const theme = useStore((s) => s.theme);
   const src = theme === 'midnight'
     ? '/assets/gigly-ticket-dark.png'

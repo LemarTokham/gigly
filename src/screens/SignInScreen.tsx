@@ -32,7 +32,7 @@ export function SignInScreen() {
     <div className="gigly-app">
       <div className="app-bar">
         <span style={{ width: 36 }} />
-        <Wordmark />
+        <Wordmark size={108} />
         <span style={{ width: 36 }} />
       </div>
 

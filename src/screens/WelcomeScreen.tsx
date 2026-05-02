@@ -41,7 +41,7 @@ export function WelcomeScreen() {
     <div className="gigly-app">
       <div className="app-bar">
         <span style={{ width: 36 }} />
-        <Wordmark />
+        <Wordmark size={108} />
         <button
           onClick={() => navigate('/signin')}
           className="icon-btn"
