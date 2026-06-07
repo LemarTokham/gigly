@@ -41,9 +41,12 @@ export const seedVenues: Venue[] = [
   { id: 10, name: 'Palau Sant Jordi',    slug: 'palau-sant-jordi',     city: 'BCN',  status: 'visited',  x: 84, y: 30 },
 ];
 
-const photoMet = '/assets/inspiration/journal-metallica.jpeg';
-const photoXG  = '/assets/inspiration/journal-xg.jpeg';
-const photoMus = '/assets/inspiration/journal-museu.jpeg';
+// Metallica gigs get the band photo; everything else gets the generic
+// "I was there" crowd-and-stage shot. Real per-gig photos land in Phase 2
+// when we wire up Supabase Storage + user uploads.
+const photoMet = '/assets/concert-photos/metallica-band.jpg';
+const photoXG  = '/assets/concert-photos/concert-crowd.webp';
+const photoMus = '/assets/concert-photos/concert-crowd.webp';
 
 export const seedGigs: Gig[] = [
   {

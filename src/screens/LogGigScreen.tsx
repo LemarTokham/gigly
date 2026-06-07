@@ -15,9 +15,8 @@ const allTags = [
 ];
 
 const stockPhotos = [
-  '/assets/inspiration/journal-metallica.jpeg',
-  '/assets/inspiration/journal-xg.jpeg',
-  '/assets/inspiration/journal-museu.jpeg',
+  '/assets/concert-photos/concert-crowd.webp',
+  '/assets/concert-photos/metallica-band.jpg',
 ];
 
 type Match = {
