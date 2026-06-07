@@ -7,19 +7,19 @@ const cards = [
   {
     title: 'log every gig',
     body: 'rate it, write a few words, see the setlist. like a journal but for live music.',
-    photo: '/assets/inspiration/journal-metallica.jpeg',
+    photo: '/assets/concert-photos/concert-hands-up.webp',
     tape: 'yellow' as const,
   },
   {
     title: 'follow your people',
     body: "see what your friends went to. tell them their pick was good. show them yours.",
-    photo: '/assets/inspiration/journal-xg.jpeg',
+    photo: '/assets/concert-photos/concert-crowd.webp',
     tape: 'pink' as const,
   },
   {
     title: 'turn it into a playlist',
     body: 'any setlist becomes a Spotify or Apple Music playlist. relive the night.',
-    photo: '/assets/inspiration/journal-museu.jpeg',
+    photo: '/assets/concert-photos/metallica-band.jpg',
     tape: 'yellow' as const,
   },
 ];
