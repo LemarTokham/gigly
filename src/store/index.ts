@@ -241,11 +241,25 @@ export const useStore = create<StoreState>()(
     }),
     {
       name: 'gigly:v1',
-      version: 4,
+      version: 5,
       storage: createJSONStorage(() => localStorage),
       migrate: (persistedState: unknown, version: number) => {
         const state = persistedState as Record<string, unknown> | null;
         if (!state) return state;
+
+        // v4 → v5: rewrite old journal photo paths (files deleted) to new concert photos.
+        // Map: journal-metallica → metallica-band, others → concert-crowd.
+        if (version < 5) {
+          const photoMap: Record<string, string> = {
+            '/assets/inspiration/journal-metallica.jpeg': '/assets/concert-photos/metallica-band.jpg',
+            '/assets/inspiration/journal-xg.jpeg':        '/assets/concert-photos/concert-crowd.webp',
+            '/assets/inspiration/journal-museu.jpeg':     '/assets/concert-photos/concert-crowd.webp',
+          };
+          const oldGigs = (state.gigs as Array<Gig & { photo?: string }>) ?? [];
+          state.gigs = oldGigs.map((g) =>
+            g.photo && photoMap[g.photo] ? { ...g, photo: photoMap[g.photo] } : g
+          );
+        }
 
         // v1 → v2: rating → tier + rankings
         if (version < 2) {
