@@ -1,0 +1,10 @@
+{
+  "name": "gigly-waitlist",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Waitlist landing page for gigly (justgigly.com)",
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}
