@@ -93,7 +93,7 @@ export default async function handler(req, res) {
         `gigly's a journal for live music. you log every gig you go to, rate it ` +
         `loved, mid or nah, and see what the crowd for your favourite artists ` +
         `actually thought.\n\n` +
-        `i'm building it right now. the second it's ready, you'll be one of the ` +
+        `we're building it right now. the second it's ready, you'll be one of the ` +
         `first to know.\n\n` +
         `talk soon,\nlemar`,
       html: welcomeHtml(cleanName),
@@ -121,7 +121,7 @@ function welcomeHtml(name) {
         artists actually thought.
       </p>
       <p style="font-size:16px; line-height:1.5; color:#6B5A47; margin:0;">
-        i'm building it right now. the second it's ready, you'll be one of the
+        we're building it right now. the second it's ready, you'll be one of the
         first to know.
       </p>
       <p style="font-size:14px; color:#9A876E; margin:22px 0 0;">talk soon,<br/>lemar</p>
