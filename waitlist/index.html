@@ -22,57 +22,100 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <main class="wrap">
-      <img class="logo" src="/gigly-ticket.png" alt="gigly" />
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="wrap">
+        <img class="logo" src="/gigly-ticket.png" alt="gigly" />
 
-      <h1 class="headline">every gig, remembered.</h1>
+        <h1 class="headline">every gig, remembered.</h1>
 
-      <p class="sub">
-        a journal for live music. log every show, rate it
-        <span class="tier loved">loved</span> /
-        <span class="tier mid">mid</span> /
-        <span class="tier nah">nah</span>, and see how the crowd for your
-        favourite artists really felt.
-      </p>
+        <p class="sub">
+          a journal for live music. log every show, rate it
+          <span class="tier loved">loved</span> /
+          <span class="tier mid">mid</span> /
+          <span class="tier nah">nah</span>, and see how the crowd for your
+          favourite artists really felt.
+        </p>
 
-      <p class="hand">launching soon — get on the list.</p>
+        <p class="hand">launching soon in liverpool — get on the list.</p>
 
-      <!-- The form. JS intercepts the submit and POSTs to /api/join -->
-      <form id="join" class="form" novalidate>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="first name"
-          autocomplete="given-name"
-          maxlength="80"
-          required
-        />
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="you@email.com"
-          autocomplete="email"
-          required
-        />
-        <button id="submit" type="submit">join the waitlist</button>
-      </form>
+        <form id="join" class="form" novalidate>
+          <input id="name" name="name" type="text" placeholder="first name"
+            autocomplete="given-name" maxlength="80" required />
+          <input id="email" name="email" type="email" placeholder="you@email.com"
+            autocomplete="email" required />
+          <button id="submit" type="submit">join the waitlist</button>
+        </form>
 
-      <p id="msg" class="msg" role="status" aria-live="polite"></p>
+        <p id="msg" class="msg" role="status" aria-live="polite"></p>
+        <p id="count" class="count"></p>
+        <p class="fineprint">no spam. just a note when it's ready.</p>
 
-      <p class="fineprint">no spam. just a note when it's ready.</p>
-
-      <!-- Success state, hidden until signup completes -->
-      <div id="done" class="done" hidden>
-        <div class="stamp">YOU'RE IN</div>
-        <p class="done-line" id="done-line">nice one. we'll be in touch.</p>
+        <!-- Success state -->
+        <div id="done" class="done" hidden>
+          <div class="stamp">YOU'RE IN</div>
+          <p class="done-line" id="done-line">nice one. we'll be in touch.</p>
+        </div>
       </div>
+    </section>
 
-      <footer class="footer">
-        <span>gigly · concert journal</span>
-      </footer>
-    </main>
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="how">
+      <div class="wrap-wide">
+        <h2 class="how-title">how it works</h2>
+        <p class="how-lede">three steps, then you're hooked.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3 class="step-title">log every gig</h3>
+            <p class="step-body">
+              rate the show, pin your top three of the year, and jot the moment
+              down while it's fresh. your gig history, finally in one place.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3 class="step-title">discover what's on</h3>
+            <p class="step-body">
+              a hand-picked feed of upcoming shows and the emerging liverpool
+              artists worth catching before they blow up.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3 class="step-title">never miss the next one</h3>
+            <p class="step-body">
+              follow the venues and artists you love and keep your finger on the
+              pulse of the city's live music scene.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOUNDING MEMBERS ============ -->
+    <section class="founding">
+      <div class="wrap">
+        <div class="founding-card">
+          <div class="founding-kicker">founding members</div>
+          <h2 class="founding-title">first 100 on the list get more.</h2>
+          <ul class="perks">
+            <li>a <b>founding member</b> stamp on your profile</li>
+            <li>first pick of your <b>@handle</b> before anyone else</li>
+            <li><b>early access</b> before the public launch</li>
+            <li>anything we ever charge for — <b>free, for good</b></li>
+          </ul>
+          <a href="#top" class="founding-cta" id="founding-cta">claim your spot</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>gigly · concert journal · liverpool</span>
+    </footer>
 
     <script src="/join.js"></script>
   </body>
