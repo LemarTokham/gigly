@@ -41,6 +41,7 @@ body {
 
 /* Hero fills the first screen; sections below scroll into view */
 .hero {
+  position: relative;
   min-height: 100dvh;
   display: flex;
   align-items: center;
@@ -51,6 +52,43 @@ body {
     rgba(255, 255, 255, 0.35) 0%,
     transparent 60%
   );
+}
+
+/* Scroll cue at the bottom of the hero */
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 8px;
+  transition: opacity 250ms ease;
+  animation: bob 1.8s ease-in-out infinite;
+}
+.scroll-cue svg {
+  display: block;
+}
+.scroll-cue.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes bob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue { animation: none; }
 }
 
 .wrap {

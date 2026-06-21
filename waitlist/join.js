@@ -41,6 +41,23 @@ async function loadCount() {
   }
 }
 
+// Scroll cue: click jumps to "how it works"; it fades out once you scroll
+const scrollCue = document.getElementById("scroll-cue");
+const howSection = document.querySelector(".how");
+if (scrollCue) {
+  scrollCue.addEventListener("click", () => {
+    if (howSection) howSection.scrollIntoView({ behavior: "smooth" });
+  });
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY > 40) scrollCue.classList.add("hidden");
+      else scrollCue.classList.remove("hidden");
+    },
+    { passive: true }
+  );
+}
+
 // "claim your spot" scrolls back up to the form
 if (foundingCta) {
   foundingCta.addEventListener("click", (e) => {
