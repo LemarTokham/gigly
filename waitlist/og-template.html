@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+  Source for the social share image (og.png). Not served to users.
+  Rendered to PNG with headless Chrome at 1200x630. To regenerate after
+  editing, re-run the chrome --screenshot command (see commit / README).
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Serif+4:opsz,wght@8..60,400&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; }
+      body {
+        background: #f4ecd8;
+        background-image: radial-gradient(
+          ellipse at 50% 32%,
+          rgba(255, 255, 255, 0.55) 0%,
+          transparent 62%
+        );
+        font-family: "Source Serif 4", Georgia, serif;
+        color: #2b2018;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .logo {
+        height: 124px;
+        transform: rotate(-3deg);
+        margin-bottom: 40px;
+        filter: drop-shadow(0 3px 5px rgba(58, 46, 34, 0.2));
+      }
+      .tagline {
+        font-family: "DM Serif Display", Georgia, serif;
+        font-size: 104px;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+      }
+      .tagline .q { color: #9a876e; }
+      .tagline .a { color: #2b2018; }
+      .sub {
+        font-size: 32px;
+        color: #6b5a47;
+        margin-top: 26px;
+      }
+      .url {
+        position: absolute;
+        bottom: 44px;
+        font-family: "Special Elite", monospace;
+        font-size: 22px;
+        letter-spacing: 0.18em;
+        color: #c8553d;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="logo" src="gigly-ticket.png" alt="" />
+    <div class="tagline"><span class="q">dig it?</span> <span class="a">gig it!</span></div>
+    <div class="sub">a journal for live music</div>
+    <div class="url">justgigly.com</div>
+  </body>
+</html>
