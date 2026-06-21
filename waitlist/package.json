@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Waitlist landing page for gigly (justgigly.com)",
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
     "resend": "^4.0.0"
   }
 }

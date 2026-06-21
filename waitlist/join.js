@@ -21,7 +21,9 @@ function showError(text) {
 
 function renderCount(n) {
   lastCount = n;
-  if (n < FOUNDING_CAP) {
+  if (n <= 0) {
+    countEl.textContent = "be one of the first on the list";
+  } else if (n < FOUNDING_CAP) {
     const left = FOUNDING_CAP - n;
     countEl.innerHTML = `<b>${left}</b> founding ${left === 1 ? "spot" : "spots"} left`;
   } else {

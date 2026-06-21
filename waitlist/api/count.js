@@ -1,29 +1,34 @@
-// Returns how many people are on the waitlist (size of the Resend audience).
-// Cached at Vercel's edge for 60s so we don't hammer Resend on every visit.
+// Returns how many people are on the waitlist, counted from Supabase
+// (the source of truth). Cached at Vercel's edge so we don't query on
+// every single page view.
 
-import { Resend } from "resend";
+import { createClient } from "@supabase/supabase-js";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID;
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
 
 export default async function handler(req, res) {
-  // Cache: serve the same number for 60s, refresh in the background after.
-  res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate=300");
+  res.setHeader("Cache-Control", "s-maxage=30, stale-while-revalidate=120");
+
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
+    // Not configured yet — report 0 so the page degrades gracefully.
+    return res.status(200).json({ count: 0, configured: false });
+  }
 
   try {
-    if (!AUDIENCE_ID || !process.env.RESEND_API_KEY) {
-      return res.status(200).json({ count: 0 });
-    }
-    const { data, error } = await resend.contacts.list({ audienceId: AUDIENCE_ID });
+    const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
+    // head:true + count:'exact' returns the count WITHOUT pulling any rows.
+    const { count, error } = await supabase
+      .from("waitlist")
+      .select("*", { count: "exact", head: true });
+
     if (error) {
-      console.warn("count error:", error);
+      console.warn("count error:", error.message);
       return res.status(200).json({ count: 0 });
     }
-    // Resend returns { data: { data: [...] } }; be defensive about the shape.
-    const arr = Array.isArray(data) ? data : data?.data ?? [];
-    return res.status(200).json({ count: arr.length });
+    return res.status(200).json({ count: count ?? 0, configured: true });
   } catch (err) {
-    console.warn("count exception:", err);
+    console.warn("count exception:", err?.message);
     return res.status(200).json({ count: 0 });
   }
 }
